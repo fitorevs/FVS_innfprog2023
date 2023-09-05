@@ -40,31 +40,37 @@
         Kommenter hver feil du finner! 
     -->
     <script>
+        const examtype = "error"
+        //Tekst-strengen er avsluttet med anførselstegn.
 
-        
-        const examtype = "error" 
-        //Tekst-strengen error er avsluttet med anførselstegn. 
-        
-        const studenttype: "hero";
+        const studenttype = "hero";
+        // : er endret til =
 
         const maxScore = 1337;
         const currentScore = 330;
 
-        //Linje 53 Fjernet dobbelt =
-        const addedScore = currentScore * 4:
+        const addedScore = currentScore * 4;
+        // == er endret til =
+        // : er endret til ;
+
         const missingMaxScore = "17";
         currentScore = addedcore + missingMaxScore;
 
         const green = "0, 128, 0";
 
-        if (maxScore == 1337) {
+        if (maxScore === 1337) {
+            // == er endret til ===
             const successImage = `${examtype}-{studenttype}`
         }
 
-        if (currentScore ==== maxScore) [
-            document.getElementByIDE("background").style.backgroundImage = "url(" + successImage + ".jpg)"
-            document.getElementById("mainframe"),style.backgroundColor = "rgb(" + greeen + ")"
+        if (currentScore === maxScore) {
+            document.getElementById("background").style.backgroundImage = "url(" + successImage + ".jpg)"
+            document.getElementById("mainframe").style.backgroundColor = "rgb(" + greeen + ")"
         }
+        // ==== er endret til ===
+        // [ er endret til {
+        // IDE er endret til Id
+        // , er endret til . før styl
     </script>
 </body>
 
