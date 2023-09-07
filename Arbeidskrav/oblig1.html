@@ -47,35 +47,35 @@
         // : er endret til =
 
         const maxScore = 1337;
-        const currentScore = 330;
+        let currentScore = 330;
+        //Byttet ut const med let
 
         const addedScore = currentScore * 4;
         // == er endret til =
         // : er endret til ;
 
         const missingMaxScore = 17;
-        //Anførselstegn på et nummer er endret
+        //Anførselstegn på et nummer er tatt bort
 
         currentScore = addedScore + missingMaxScore;
-        //Skrivefeil i variabelen addedcore 
+        //Skrivefeil i variabelen addedcore
 
         const green = "0, 128, 0";
 
         if (maxScore == 1337) {
-            const successImage = `${examtype}-${studenttype}`
+            successImage = `${examtype}-${studenttype}`
             //$ før {studenttype} er lagt til
         }
 
         if (currentScore === maxScore) {
             document.getElementById("background").style.backgroundImage = "url(" + successImage + ".jpg)"
-            document.getElementById("mainframe").style.backgroundColor = "rgb(" + greeen + ")"
+            document.getElementById("mainframe").style.backgroundColor = "rgb(" + green + ")"
         }
-        // Linje 66: ==== er endret til ===
-        // Linje 66: [ er endret til {
-        // Linje 71: Feilstavelse i getElementbyIDE
-        // Linje 71: , er endret til . før style.backgroundColor
-        // Linje 71: Skrivefeil i greeen
+        // ==== er endret til ===
+        // [ er endret til {
+        // Feilstavelse i getElementbyIDE
+        // , er endret til . før style.backgroundColor
+        // Skrivefeil i greeen.
     </script>
 </body>
-
 </html>

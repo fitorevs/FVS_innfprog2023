@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Øvingsoppgave 2 - variabler</title>
 </head>
 <body>
     <p id="melding"></p>
@@ -20,10 +20,10 @@
         const age = 2022 - user_birthyear
         //variabelen user_birthyear var feilstavet (= i stedet for _)
 
-        const utskrift = "Hei" + user_name + " (" + age + "år")
+        const utskrift = "Hei " + user_name + " (" + age + "år)";
         //Det manglet et pluss-tegn i konkatineringen foran user_name-variabelen
     
-        document.getElementByID("melding").innerHTML = utskrift
+        document.getElementById("melding").innerHTML = utskrift;
     </script>
 </body>
 </html>
