@@ -15,8 +15,12 @@
 <body>
     <h1>Photo Gallery</h1>
     <section id="gallery">
-        
+    
+    </section>
 
+    <h2>Natur</h2>
+    <section id="categoryimages">
+    
     </section>
     <script>
        //All pictures fetched with permission from unsplash.com
@@ -60,6 +64,22 @@
             <h2>${photo.title}</h2>
             <p>Photographer: ${photo.photographer}</p>
         </article>`)
+
+        const categoryImages = photogallery.filter(image => image.category === "Nature")
+
+        categoryImages.map(catimage => document.getElementById("categoryimages").innerHTML += `
+        <article>
+            <img src="${catimage.imageURL}" alt="${catimage.title}" />
+            <h2>${catimage.title}</h2>
+            <p<Photographer: ${catimage.photographer}</p>
+        </article>
+        `
+
+        )
+
+        console.log(categoryImages)
+
+
     </script>
 </body>
 </html>
