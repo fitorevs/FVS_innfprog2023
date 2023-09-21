@@ -17,7 +17,7 @@
     <header>
         <section id="player">
             <ul>
-                <li><img src="icons/shield.svg"> <span id="playerName">"Marius"</span></li>
+                <li><img src="icons/shield.svg"> <span id="playerName">Marius</span></li>
                 <li><img src="icons/energydrink.svg" title="energy"> <span id="energy">3</span></li>
                 <li><img src="icons/notebook.svg"> <span id="notebookItems">0</span></li>
                 <li><img src="icons/solution.svg"> <span id="points">0</span> poeng</li>
@@ -41,13 +41,13 @@
                         <td><img src="icons/variable.svg" alt="" /></td>
                         <td>Variabler</td>
                         <td>
-                            <span id="variables">0</span>
+                            <span id="variables">0</span> 
                         </td>
                     </tr>
                     <tr>
                         <td><img src="icons/array.svg" alt="" /></td>
                         <td>Arrayer</td>
-                        <td></span id="arrays">1</span></td>
+                        <td><span id="arrays">1</span></td>
                     </tr>
                     <tr>
                         <td><img src="icons/loop.svg" alt="" /></td>
@@ -93,6 +93,8 @@
             functions: 3
         }
 
+        
+
         //(BONUS) TODO: function for all prints
         function updateStaticUI() {
             //TODO: print playerinfo to HTML
@@ -105,29 +107,16 @@
             } else {
                 document.getElementById("playerName").innerHTML = gameConfig.player
             }
-            
+
             //TODO: print notebook info to HTML
-            document.getElementById("variabler").innerHTML = notebook.variables
+            document.getElementById("variables").innerHTML = notebook.variables
             document.getElementById("arrays").innerHTML = notebook.arrays
             document.getElementById("loops").innerHTML = notebook.loops
             document.getElementById("functions").innerHTML = notebook.functions
-        
         }
 
         //Kjøre funksjonen for utskrift:
         updateStaticUI()
     </script>
-</body>
-</html>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        </script>
 </body>
 </html>
