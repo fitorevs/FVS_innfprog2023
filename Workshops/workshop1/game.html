@@ -17,7 +17,7 @@
     <header>
         <section id="player">
             <ul>
-                <li><img src="icons/shield.svg"> <span id="playerName">""</span></li>
+                <li><img src="icons/shield.svg"> <span id="playerName">"Marius"</span></li>
                 <li><img src="icons/energydrink.svg" title="energy"> <span id="energy">3</span></li>
                 <li><img src="icons/notebook.svg"> <span id="notebookItems">0</span></li>
                 <li><img src="icons/solution.svg"> <span id="points">0</span> poeng</li>
@@ -47,18 +47,17 @@
                     <tr>
                         <td><img src="icons/array.svg" alt="" /></td>
                         <td>Arrayer</td>
-                        <td>1</span id="arrays">1</span>
-                        </td>
+                        <td></span id="arrays">1</span></td>
                     </tr>
                     <tr>
                         <td><img src="icons/loop.svg" alt="" /></td>
                         <td>Løkker</td>
-                        <td>2</td>
+                        <td><span id="loops">2</span></td>
                     </tr>
                     <tr>
                         <td><img src="icons/function.svg" alt="" /></td>
                         <td>Funksjoner</td>
-                        <td>1</td>
+                        <td><span id="functions">8</span></td>
                     </tr>
                 </table>
             </div>
@@ -80,14 +79,14 @@
         //PREPARE GAME CONFIG AND VARIABLES
         //TODO: config
         const gameConfig = {
-            player: "",
+            player: "Fitore",
             energy: 10,
             points: 50,
             duration: 123
         }
        
         //TODO: notebook
-        const notebook= {
+        const notebook = {
             variables: 3,
             arrays: 17,
             loops: 5,
@@ -95,7 +94,7 @@
         }
 
         //(BONUS) TODO: function for all prints
-        function updateStaticUI() {}
+        function updateStaticUI() {
             //TODO: print playerinfo to HTML
             //Tas vekk pga oppg 5: document.getElementById("playerName").innerHTML = gameConfig.player
             document.getElementById("energy").innerHTML = gameConfig.energy
@@ -113,8 +112,13 @@
             document.getElementById("loops").innerHTML = notebook.loops
             document.getElementById("functions").innerHTML = notebook.functions
         
-        
-        
+        }
+
+        //Kjøre funksjonen for utskrift:
+        updateStaticUI()
+    </script>
+</body>
+</html>
         
         
         
