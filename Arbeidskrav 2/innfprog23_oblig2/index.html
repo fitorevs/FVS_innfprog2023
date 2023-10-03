@@ -65,29 +65,30 @@
                 button.innerHTML = `Close <img src="closeicon.png">`
             }
         })
+        //Fikk hjelp av Nikolai Lysebraate til å komme igang, student v/hiof Informasjonssytemer
 
-        //
+        //Variabel for meny-HTML
+        //TODO: Skal ikke starte som en tom streng, må inneholde noe HTML for å møte oppgaveteksten...
         let menuHTML = `<ul><li><a href="index.html">Home</a></li></ul>`
 
-        //
+        //Gå gjennom første nivå av menupoints-array
         menuPoints.map(category => {
+            //TODO: Forbered HTML med overskrift og listestart
             menuHTML += `<h2>${category.menuheader}</h2>`
 
-            //
+            //TODO: Gå gjennom array på andre nivå (menulinks)
+            //TODO: For hver menulink: fyll menuHTML med listeelementer og link
             let menulinks = category.menulinks
-            
             category.menulinks.map(links => {
                 menuHTML += `<ul><li><a href="${links.url}">${links.menutext}</a></li></ul>`
             })
-
-            //Avslutter liste
+            //TODO: Avslutt liste
             menuHTML += `</ul>`
 
         })
-
-        //Skriver ut HTML til <nav>
-        menu.innerHTML = menuHTML
+        
+        //TODO: Skriv ut HTML til <nav>:
+        document.getElementById("menu").innerHTML = menuHTML
     </script>
 </body>
-
 </html>
