@@ -35,8 +35,17 @@
 
     <script>
         //KODE FOR Å SKRIVE BREVET MED TASTATURET
-        document.addEventListener("keypress", function(event) {
+        document.addEventListener("keydown", function(event) {
             console.log(event)
+            if (event.key.length === 1){
+                document.getElementById("text").innerHTML += event.key
+            }
+            if(event.key === "Backspace"){
+                const text = document.getElementById("text").innerHTML
+                const newText = text.slice(0, text.length - 1)
+                document.getElementById("text").innerHTML = newText
+                console.log(text.slice(0, text.length - 1))
+            }
         })
     </script>
 </body>
