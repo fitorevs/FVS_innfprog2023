@@ -31,6 +31,8 @@
 <body>
     <main>
         <div id="text"></div>
+        <p>Testtekst 1</p>
+        <p>Testtekst 2</p>
     </main>
 
     <script>
@@ -45,6 +47,15 @@
                 const newText = text.slice(0, text.length - 1)
                 document.getElementById("text").innerHTML = newText
                 console.log(text.slice(0, text.length - 1))
+            }
+            if(event.key === "Enter") {
+                //document.getElementById("text").innerHTML += "<br />"
+                
+                //Finn avsluttende </p>. Lett til <p> etter denne avsluttende </p>-taggen,
+                //og en </p> på slutten av setningen
+                const text = document.getElementById("text").innerHTMl
+                const textArray = text.split("<p>")
+                console.log(textArray)
             }
         })
     </script>
