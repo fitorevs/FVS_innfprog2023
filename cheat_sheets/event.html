@@ -10,11 +10,10 @@
             padding: 10px;
             color: #ffffff;
             border: 3px solid darkslategrey;
-            transition: ease-in-out;
+            transition: ease-in-out .4s;
         }
         .red {
             background-color: red;
-
         }
         .green {
             background-color: green;
@@ -22,10 +21,10 @@
     </style>
 </head>
 <body>
-    <button id="knapp">Trykk meg</button>
+    <button id="knapp" class="green">Trykk meg</button>
     <p id="melding"></p>
     <script>
-        //Sjekk hva et event golder av egenskaper
+        //Sjekk hva et event inneholder av egenskaper
         document.addEventListener("mousemove", function(event) {
             //console.log(event)
         })
@@ -33,21 +32,19 @@
         const knapp = document.getElementById("knapp")
         //Vi skal endre knappeteksten når vi holder musepekeren over knappen
         knapp.addEventListener("mouseover", function(event) {
-            knapp.innerHTML = "Neeeei, ikke trykk på meg..."
+            knapp.innerHTML = "Neeeeei, ikke trykk på meg..."
             knapp.classList.remove("green")
             knapp.classList.add("red")
         })
-
         knapp.addEventListener("mouseleave", function(event) {
             knapp.innerHTML = "Trykk meg"
             knapp.classList.remove("red")
-            knapp.classlist.add("green")
+            knapp.classList.add("green")
         })
-
-        //Vi skal lage en eventlistener etter trykk på knapp med id knapp
+        //VI skal lage en eventListener etter trykk på knapp med id knapp
         knapp.addEventListener("click", function(event) {
             console.log(event)
-            document.getElementById("melding").innerHTMl = "Du klarte ike dy deg, kunne du?!"
+            document.getElementById("melding").innerHTML = "Du klarte ikke dy deg, kunne du?!"
         })
     </script>
 </body>
