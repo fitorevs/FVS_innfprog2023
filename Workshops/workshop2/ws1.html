@@ -40,24 +40,22 @@
                     <tr>
                         <td><img src="icons/variable.svg" alt="" /></td>
                         <td>Variabler</td>
-                        <td>
-                            <span id="variables">0</span> 
-                        </td>
+                        <td>0</td>
                     </tr>
                     <tr>
                         <td><img src="icons/array.svg" alt="" /></td>
                         <td>Arrayer</td>
-                        <td><span id="arrays">1</span></td>
+                        <td>1</span></td>
                     </tr>
                     <tr>
                         <td><img src="icons/loop.svg" alt="" /></td>
                         <td>Løkker</td>
-                        <td><span id="loops">2</span></td>
+                        <td>2</td>
                     </tr>
                     <tr>
                         <td><img src="icons/function.svg" alt="" /></td>
                         <td>Funksjoner</td>
-                        <td><span id="functions">8</span></td>
+                        <td>1</td>
                     </tr>
                 </table>
             </div>
@@ -78,51 +76,16 @@
     <script>
         //PREPARE GAME CONFIG AND VARIABLES
         //TODO: config
-        const gameConfig = {
-            player: "Marius",
-            energy: 10,
-            points: 50,
-            duration: 123
-        }
        
         //TODO: notebook
-        const notebook = {
-            variables: 3,
-            arrays: 17,
-            loops: 5,
-            functions: 3
-        }
+        
+
+        //TODO: print playerinfo to HTML
+        
+        //TODO: print notebook info to HTML
 
         //(BONUS) TODO: function for all prints
-        function updateStaticUI() {
-            //TODO: print playerinfo to HTML
-            //Tas vekk pga oppg 5: document.getElementById("playerName").innerHTML = gameConfig.player
-            document.getElementById("energy").innerHTML = gameConfig.energy
-            document.getElementById("points").innerHTML = gameConfig.points
-            document.getElementById("duration").innerHTML = gameConfig.duration
-            if(gameConfig.player === "") {
-                document.getElementById("playerName").innerHTML = "Waiting for player"
-            } else {
-                document.getElementById("playerName").innerHTML = gameConfig.player
-            }
-
-            //TODO: print notebook info to HTML
-            document.getElementById("variables").innerHTML = notebook.variables
-            document.getElementById("arrays").innerHTML = notebook.arrays
-            document.getElementById("loops").innerHTML = notebook.loops
-            document.getElementById("functions").innerHTML = notebook.functions
-        }
-
-        //Kjøre (kalle) funksjonen for utskrift:
-        updateStaticUI()
-
-        //WORKSHOP 2
-        //TODO 1: Event listener for keyboard actions
-        //TODO 2: Check if n-button is pressed
-        //TODO 3: function to add/remove the .hidden-class on #notebook
-        //TODO 4: Check if n-button is pressed
-        //TODO 5: function to add/remove the .hidden-class on #info
-
+        
     </script>
 </body>
 </html>
