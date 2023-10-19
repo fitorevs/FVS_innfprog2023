@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Cheat Sheet</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        canvas {
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="drawingArea"></canvas>
+
+    <script>
+        //Hente canvas-element
+        const canvas = document.getElementById("drawingArea")
+        //Sette høyde og bredde på canvas:
+        canvas.width = 800
+        canvas.height = 600
+        //Sette context på canvas
+        const cnx = canvas.getContext("2d")
+        
+        //Tegne en strek
+        ctx.beginPath()
+        ctx.moveTo()
+        ctx.lineTo()
+        
+    </script>
+</body>
+</html>
