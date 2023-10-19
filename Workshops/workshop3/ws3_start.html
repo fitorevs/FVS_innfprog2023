@@ -32,7 +32,7 @@
     </header>
     <main>
         
-        <section id="notebook">
+        <section id="notebook" class="hideable">
             <div id="notebook-page">
                 
                 <h2>Notater</h2>
@@ -62,7 +62,7 @@
                 </table>
             </div>
         </section>
-        <section id="info" class="hidden">
+        <section id="info" class="hidden hideable">
             <div id="info-page">
                 <h2>Info / Hvordan spille C<sup>3</sup></h2>
                 <p>Målet med spiller er at programmeringsstudenten Fortran <span class="illustration">(<img src="icons/fortran.svg" />)</span> skal samle programmeringskonseptene variabler <span class="illustration">(<img src="icons/variable.svg" />)</span>, arrayer <span class="illustration">(<img src="icons/array.svg" />)</span>, løkker <span class="illustration">(<img src="icons/loop.svg" />)</span> og funksjoner <span class="illustration">(<img src="icons/function.svg" />)</span> i kladdeboka <span class="illustration">(<img src="icons/notebook.svg" />)</span> si.</p>
@@ -93,6 +93,8 @@
             functions: 3
         }
 
+        
+
         //(BONUS) TODO: function for all prints
         function updateStaticUI() {
             //TODO: print playerinfo to HTML
@@ -113,8 +115,50 @@
             document.getElementById("functions").innerHTML = notebook.functions
         }
 
+        //WS2, Oppgave 4: Funksjon for å skrive ut oppdatering til et element:
+        function updateSingleStaticUI(elementid, value) {
+            document.getElementById(elementid).innerHTML = value
+        }
+
         //Kjøre (kalle) funksjonen for utskrift:
         updateStaticUI()
+
+        //WS2, Oppgave 4: Testkjøring av funksjon for å oppdatere ett element:
+        updateSingleStaticUI("playerName", "TESTNAVN")
+
+        //Lage funksjon for å vise/skjule elementer
+        function toggleVisibility(elementid) {
+            //få tak i elementet som skal toggle synlighet
+            const element = document.getElementById(elementid)
+            //sjekke om klassen hidden finnes:
+            if(element.classList.contains("hidden") === true) {
+                element.style.display = "block"
+                element.classList.remove("hidden")
+            } else {
+                element.style.display = "none"
+                element.classList.add("hidden")
+            }
+        }
+
+        //WS2, Oppg. 3: Lytte etter tastaturtrykk
+        document.addEventListener("keydown", function(Event) {
+            //Sjekke om tasten som er trykket er N:
+            if(Event.key === "n") {
+                toggleVisibility("notebook")
+            }
+            //Sjekke om tasten som er trykket er I:
+            if(Event.key === "i") {
+                toggleVisibility("info")
+            }
+        })
+
+        //WS2, Oppg. 2: Lytte etter klikk på notebook- og info-knappene:
+        document.getElementById("notebookToggler").addEventListener("click", function(Event) {
+            toggleVisibility("notebook")
+        })
+        document.getElementById("infoToggler").addEventListener("click", function(Event) {
+            toggleVisibility("info")
+        })
     </script>
 </body>
 </html>
