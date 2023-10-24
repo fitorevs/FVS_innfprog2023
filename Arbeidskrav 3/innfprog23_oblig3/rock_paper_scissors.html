@@ -130,7 +130,7 @@
         <div id="playerSigns">
             <h2 id="instruction">Play your hand:<span id="choice"></span></h2>
             <button type="button" onClick="play('rock')" id="rockButton" class="playerChoice"><img src="rock.png" alt="Rock" /></button>
-            <!--Skrivefeil: playy istedenfor play-->
+            <!--Oppgave 1: Skrivefeil: playy istedenfor play-->
             <button type="button" onClick="play('paper')" id="paperButton" class="playerChoice"><img src="paper.png" alt="Paper" /></button>
             <button type="button" onClick="play('scissors')" id="scissorsButton" class="playerChoice"><img src="scissors.png" alt="Scissors" /></button>
         </div>
@@ -154,7 +154,10 @@
         //We'll prepare an empty variable that later will contain the winner
         let winner = ""
         //And prepare a counter-variable for number of games played:
+        
+        //Deklarerer tellere for antall spill, spillerseire, datamaskinseire og uavgjorte spill
         let counter = 0
+
         //Make available signs available in code as an array
         const signs = ["rock", "paper", "scissors"]
         
@@ -166,7 +169,7 @@
          * On mouseout, remove the text and class
          */
         buttons.forEach(button => {
-        //Skrivefeil: buttonss istedenfor buttons
+        //Oppgave 1: Skrivefeil: buttonss istedenfor buttons
             button.addEventListener("mouseover", (event) => {
                 document.getElementById("choice").innerHTML = button.childNodes[0].alt
                 document.getElementById("choice").setAttribute("class","choiceAnimate")
@@ -180,6 +183,7 @@
         // Function to run when we click a player sign button ( called play() ).
         // We pass one parameter: "playerSign", which is a text string indicating
         // the player's choice (rock, paper or scissors)
+
         function play(playerSign) {
             console.log("Player selected: " + playerSign)
             // First, we mark the players choice by making selection visible (display: block)
@@ -208,11 +212,12 @@
             console.log("Computer selected: " + computerSign)
             // Good! Now we also have to show this on the website, by making #computer visible and filling it with HTML:
             const computer = document.getElementById("computer") 
-            //Skrivefeil: getElementByID istedenfor getElementById
+            //Oppgave 1: Skrivefeil: getElementByID istedenfor getElementById
             
             computer.style.display = "block"
             /* OPPGAVE 2.1: FORKLAR HVA SOM SKJER PÅ LINJE 208
-             *  
+             * I denne linjen henter vi id-en "computer" og lagrer det i en variabel kalt "computer". 
+                Denne variabelen brukes for å manipulere eller endre innholdet til dette HTML-elementet.
              */
 
             computer.innerHTML = "Computer selects " + computerSign
@@ -252,32 +257,24 @@
                 }
             }
 
-            let resultMessage = ""
-            if(winner === "player") {
-                resultMessage = "You win"
-            } else if (winner === "computer") {
-                resultMessage = "You lost"
-            } else {
-                resultMessage = "It`s a tie"
-            }
-            //Oppgave 5: 
-        
+            //Oppgave 3: 
+            const winnerDiv = document.getElementById("winner")
             //Now we have checks to set the winner. Let's write it to the website.
             //Now you know the drill: show #winner by display: block and fill it with HTML:
-            const winnerDiv = document.getElementById("winner")
-            if(winner === "player") { 
-                winnerDiv.style.backgroundColor = "#FFD700"
-            } else {
-                winnerDiv.style.backgroundColor = ""
-            }
-            //Oppgave 3: 
-
             winnerDiv.style.display = "block"
-
             winnerDiv.innerHTML = "The winner is " + winner
             /* OPPGAVE 2.2: FORKLAR HVA SOM SKJER PÅ LINJE 254
-             * _ditt svar her_ 
+             * Denne linjen endrer visningsstilen til et HTML-element referert til som "winnerDiv"
+                Den gjør det skjulte elementet synlig.
              */
+
+            if (winner === "player") {
+                //Endrer bakgrunnsfargen til gullfarget (#FFD700) når brukeren vinner
+                winnerDiv.style.backgroundColor = "#FFD700"
+            } else {
+                // Tilbakestiller bakgrunnsfargen hvis det ikke er brukerens seier
+                winnerDiv.style.backgroundColor = "#006b5e"
+            }
 
             //Now, lastly, let's update the counter on how many games we have played:
             counter = counter + 1
@@ -288,7 +285,7 @@
              */
 
             document.getElementById("counter").style.color = "lightblue"
-            //Oppgave 4: Denne linjen endrer fargen på teksten til elementet med Id "counter" til lyseblå etter antall spill som er spilt.
+            //Oppgave 4: Denne linjen endrer fargen på teksten til elementet med id "counter" til lyseblå for antall spill som er spilt.
 
             //And display the button for playing again:
             document.getElementById("replay").style.display = "block"
@@ -314,7 +311,7 @@
 
         //Function for random numnber, fetched from MDN web docs:
         function getRandomInt(max) {
-        //Skrivefeil: untion istedenfor function
+        //Oppgave 1: Skrivefeil: untion istedenfor function
             return Math.floor(Math.random() * max);
         }
     </script>
