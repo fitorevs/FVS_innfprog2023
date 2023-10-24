@@ -144,12 +144,12 @@
             <!-- HTML element to show winner -->
         </div>
         <div id="counterBox">
-            <!--Oppgave 6: Fikk hjelp av Nikolai Lysebraaten, Informasjonssystemer --> 
+            <!--Oppgave 6: Fikk hjelp til å komme igang av Nikolai Lysebraaten, Informasjonssystemer --> 
             <div>
-                Number of games played:<span id="counter">0</span>.
-                Player wins:<span id="playerWins">0</span>
-                Computer Wins:<span id="computerWins">0</span> 
-                Draws:<span id="draws">0</span>
+                Number of games played:<span id="counter">0</span>. <!--Viser antallet spill som er spilt-->
+                Player wins:<span id="playerWins">0</span> <!--Viser antallet seire for spilleren-->
+                Computer Wins:<span id="computerWins">0</span> <!--Viser antallet seiere for computer-->
+                Draws:<span id="draws">0</span> <!--Viser antallet uavgjorte spill-->
             </div>
             <!-- A hidden button to show after a game, that resets and let the player play again -->
             <button id="replay" onClick="restartGame()">Play again</button>
@@ -161,7 +161,7 @@
         let winner = ""
         //And prepare a counter-variable for number of games played:
         
-        //Deklarerer tellere for antall spill, spillerseire, datamaskinseire og uavgjorte spill
+        //Her deklareres tellere for antall spill, spillerseire, datamaskinseire og uavgjorte spill
         let counter = 0
         //Oppgave 6:
         let playerWins = 0
@@ -233,6 +233,7 @@
             computer.innerHTML = "Computer selects " + computerSign
             // Ok, now we have to check for rules! Paper beats rock, rock beat scissors, scissors beat paper.
             // This means if players sign beat computer sign, player wins. Lets try:
+
             if(playerSign === "paper") {
                 if(computerSign === "rock") {
                     winner = "player"
@@ -267,7 +268,6 @@
                 }
             }
 
-            //Oppgave 3: 
             const winnerDiv = document.getElementById("winner")
             //Now we have checks to set the winner. Let's write it to the website.
             //Now you know the drill: show #winner by display: block and fill it with HTML:
@@ -278,23 +278,26 @@
              */
 
             //Oppgave 5 og 6:
-
+            /*Denne koden oppdaterer resultMessage basert på verdien av winner.
+            *Hvis winner er "player", settes resultMessage til "You win" og playerWins økes med 1.
+            *Hvis winner er "computer", settes resultMessage til "You lost" og computerWins økes med 1.
+            *Hvis winner er "undecided", settes resultMessage til "It's a tie" og draws økes med 1.*/
             let resultMessage = ""
             if (winner === "player") {
                 resultMessage = "You win"
-                playerWins+=1
+                playerWins += 1
             } else if (winner === "computer") {
                 resultMessage = "You lost"
-                computerWins+=1
+                computerWins += 1
             } else if (winner === "undecided") {
                 resultMessage = "It`s a tie"
-                draws+=1
+                draws += 1
             }
             
             winnerDiv.innerHTML = resultMessage
 
             //winnerDiv.innerHTML = "The winner is " + winner
-            
+            //Oppgave 3:
             if (winner === "player") {
                 //Endrer bakgrunnsfargen til gullfarget (#FFD700) når brukeren vinner
                 winnerDiv.style.backgroundColor = "#FFD700"
@@ -312,6 +315,7 @@
             }
             
             //Oppgave 6:
+            //Denne koden gjør at tallene vises og oppdateres på nettsiden basert på variablene som holder styr på spillets statistikk.
             document.getElementById("counter").innerHTML = counter
             document.getElementById("playerWins").innerHTML = playerWins
             document.getElementById("computerWins").innerHTML = computerWins
