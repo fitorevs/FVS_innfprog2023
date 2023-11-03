@@ -26,7 +26,7 @@
             let grade = "F"
             if(totalPercent >= 25 && totalPercent < 45) {
                 grade = "E"
-            }
+            } 
             if(totalPercent >= 45 && totalPercent < 69) {
                 grade = "D"
             }
@@ -39,7 +39,7 @@
             if(totalPercent === 100) {
                 grade = "A"
             }
-            
+
             document.getElementById("result").innerHTML = totalPercent.toFixed(2) + "%, som gir karakteren " + grade
         }
     </script>
